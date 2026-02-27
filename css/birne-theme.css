@@ -1,0 +1,691 @@
+/* ============================================
+   Birne Reveal.js Theme
+   Claude Code pre marketérov - Workshop 2025
+   ============================================ */
+
+/* --- @font-face declarations --- */
+
+@font-face {
+  font-family: 'Conforto';
+  src: url('https://birne.sk/fonts/Conforto-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Conforto';
+  src: url('https://birne.sk/fonts/Conforto-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('https://birne.sk/fonts/GeneralSans-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('https://birne.sk/fonts/GeneralSans-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('https://birne.sk/fonts/GeneralSans-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Design Tokens --- */
+
+:root {
+  --birne-black: #221924;
+  --purple: #DCB1E6;
+  --dark-purple: #B982C6;
+  --lemon: #FAFD70;
+  --sand: #EFEEE6;
+  --sand-light: #F5F4EF;
+  --grapefruit: #FF5C1F;
+  --white: #FFFFFF;
+
+  --ai-gradient: linear-gradient(135deg, #DCB1E6 0%, #FAFD70 50%, #FF5C1F 100%);
+
+  --font-display: 'Conforto', Georgia, serif;
+  --font-body: 'General Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-code: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
+  --slide-width: 1280px;
+  --slide-height: 720px;
+}
+
+/* --- Reveal.js Core Overrides --- */
+
+.reveal-viewport {
+  background: var(--sand);
+}
+
+.reveal {
+  font-family: var(--font-body);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--birne-black);
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides section {
+  padding: 60px 80px;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* --- Images --- */
+
+.reveal .slides img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* --- Typography --- */
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--birne-black);
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+
+.reveal h1 {
+  font-size: 3.2em;
+}
+
+.reveal h2 {
+  font-size: 2.2em;
+}
+
+.reveal h3 {
+  font-size: 1.4em;
+  font-weight: 500;
+}
+
+.reveal p {
+  line-height: 1.6;
+  margin-bottom: 0.8em;
+}
+
+.reveal ul,
+.reveal ol {
+  margin-left: 0;
+  padding-left: 1.2em;
+}
+
+.reveal li {
+  line-height: 1.6;
+  margin-bottom: 0.4em;
+}
+
+.reveal strong {
+  font-weight: 500;
+  color: var(--birne-black);
+}
+
+.reveal small {
+  font-size: 0.65em;
+  opacity: 0.7;
+}
+
+.reveal a {
+  color: var(--dark-purple);
+  text-decoration: underline;
+}
+
+/* --- Slide Type: section-title --- */
+
+.reveal .slides section.section-title {
+  background: var(--birne-black);
+  color: var(--white);
+  text-align: left;
+}
+
+.reveal .slides section.section-title h1,
+.reveal .slides section.section-title h2 {
+  color: var(--white);
+}
+
+.reveal .slides section.section-title .block-number {
+  font-family: var(--font-display);
+  font-size: 5em;
+  color: var(--lemon);
+  line-height: 1;
+  margin-bottom: 0.1em;
+  opacity: 0.9;
+}
+
+.reveal .slides section.section-title .subtitle {
+  font-family: var(--font-body);
+  font-size: 0.7em;
+  color: var(--purple);
+  font-weight: 300;
+  margin-top: 0.3em;
+}
+
+.reveal .slides section.section-title .accent-line {
+  width: 120px;
+  height: 4px;
+  background: var(--ai-gradient);
+  border: none;
+  margin: 1em 0;
+  border-radius: 2px;
+}
+
+.reveal .slides section.section-title .time-badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.5em;
+  color: var(--lemon);
+  border: 1px solid var(--lemon);
+  padding: 0.2em 0.6em;
+  border-radius: 4px;
+  margin-top: 0.5em;
+  opacity: 0.8;
+}
+
+/* --- Slide Type: content --- */
+
+.reveal .slides section.content {
+  background: var(--sand);
+}
+
+.reveal .slides section.content h2 {
+  margin-bottom: 0.6em;
+}
+
+.reveal .slides section.content .highlight {
+  color: var(--grapefruit);
+  font-weight: 500;
+}
+
+/* --- Slide Type: code-example --- */
+
+.reveal .slides section.code-example {
+  background: var(--birne-black);
+  color: var(--sand-light);
+}
+
+.reveal .slides section.code-example h2,
+.reveal .slides section.code-example h3 {
+  color: var(--white);
+  font-size: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+.reveal .slides section.code-example p {
+  color: var(--sand-light);
+  opacity: 0.85;
+}
+
+.reveal pre {
+  width: 100%;
+  margin: 0.8em 0;
+  box-shadow: none;
+  font-size: 0.55em;
+}
+
+.reveal pre code {
+  font-family: var(--font-code);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.2em 1.5em;
+  line-height: 1.7;
+  max-height: 500px;
+  color: var(--sand-light);
+}
+
+/* Terminal-style prompt */
+.reveal .terminal-prompt::before {
+  content: '$ ';
+  color: var(--lemon);
+  opacity: 0.7;
+}
+
+.reveal .terminal-prompt {
+  font-family: var(--font-code);
+  font-size: 0.85em;
+  color: var(--sand-light);
+  margin: 0.3em 0;
+  padding: 0.3em 0;
+}
+
+/* Code inline */
+.reveal code {
+  font-family: var(--font-code);
+  background: rgba(34, 25, 36, 0.08);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.reveal .slides section.code-example code {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--lemon);
+}
+
+.reveal .slides section.section-title code {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--lemon);
+}
+
+/* --- Slide Type: two-column --- */
+
+.reveal .slides section.two-column {
+  background: var(--sand);
+}
+
+.reveal .slides section.two-column .columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+}
+
+.reveal .slides section.two-column .col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reveal .slides section.two-column .col img {
+  width: 100%;
+  height: auto;
+}
+
+.reveal .image-placeholder img {
+  width: 100%;
+  height: auto;
+}
+
+.reveal .slides section.two-column h2 {
+  grid-column: 1 / -1;
+  margin-bottom: 0.4em;
+}
+
+/* --- Slide Type: image-placeholder --- */
+
+.reveal .slides section.image-placeholder {
+  background: var(--sand);
+}
+
+.reveal .placeholder-box {
+  background: var(--sand-light);
+  border: 2px dashed var(--dark-purple);
+  border-radius: 16px;
+  padding: 60px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  margin: 0.8em 0;
+}
+
+.reveal .placeholder-box .placeholder-icon {
+  font-size: 3em;
+  margin-bottom: 0.3em;
+  opacity: 0.4;
+}
+
+.reveal .placeholder-box .placeholder-label {
+  font-family: var(--font-body);
+  font-size: 0.6em;
+  color: var(--dark-purple);
+  font-weight: 500;
+}
+
+.reveal .placeholder-box .placeholder-desc {
+  font-family: var(--font-body);
+  font-size: 0.5em;
+  color: var(--birne-black);
+  opacity: 0.5;
+  margin-top: 0.3em;
+}
+
+/* --- Slide Type: checklist --- */
+
+.reveal .slides section.checklist {
+  background: var(--sand);
+}
+
+.reveal .checklist-items {
+  list-style: none;
+  padding: 0;
+  margin: 0.6em 0;
+}
+
+.reveal .checklist-items li {
+  font-family: var(--font-body);
+  font-size: 0.85em;
+  padding: 0.5em 0;
+  padding-left: 2em;
+  position: relative;
+  border-bottom: 1px solid rgba(34, 25, 36, 0.08);
+}
+
+.reveal .checklist-items li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--dark-purple);
+  border-radius: 4px;
+  background: var(--white);
+}
+
+.reveal .checklist-items li code {
+  background: rgba(34, 25, 36, 0.06);
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* --- Slide Type: quote --- */
+
+.reveal .slides section.quote {
+  background: var(--birne-black);
+  color: var(--white);
+  text-align: center;
+  justify-content: center;
+}
+
+.reveal .slides section.quote blockquote {
+  font-family: var(--font-display);
+  font-size: 1.8em;
+  line-height: 1.3;
+  color: var(--white);
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  box-shadow: none;
+  width: 90%;
+  text-align: center;
+}
+
+.reveal .slides section.quote blockquote::before {
+  content: '\201C';
+  font-size: 2em;
+  color: var(--purple);
+  display: block;
+  line-height: 0.5;
+  margin-bottom: 0.2em;
+}
+
+.reveal .slides section.quote .quote-author {
+  font-family: var(--font-body);
+  font-size: 0.5em;
+  color: var(--purple);
+  margin-top: 1em;
+}
+
+/* --- Slide Type: transition --- */
+
+.reveal .slides section.transition {
+  background: var(--birne-black);
+  color: var(--white);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.reveal .slides section.transition h2 {
+  font-family: var(--font-display);
+  color: var(--sand-light);
+  font-size: 2.4em;
+  opacity: 0.9;
+}
+
+.reveal .slides section.transition .transition-logo {
+  height: 60px;
+  width: auto;
+  margin-top: 1.5em;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+
+/* --- Fragment Animations --- */
+
+.reveal .fragment {
+  transition: all 0.4s ease;
+}
+
+.reveal .fragment.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal .fragment.fade-up {
+  transform: translateY(20px);
+}
+
+/* --- Block Icons --- */
+
+.reveal .block-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5em;
+}
+
+/* --- Global Slide Logo --- */
+
+.reveal .slide-logo {
+  position: fixed;
+  bottom: 28px;
+  right: 40px;
+  height: 24px;
+  width: auto;
+  z-index: 100;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Invert logo on dark slides */
+.reveal .slide-logo.on-dark {
+  filter: brightness(0) invert(1);
+}
+
+/* --- Utility Classes --- */
+
+.reveal .text-purple { color: var(--purple); }
+.reveal .text-lemon { color: var(--lemon); }
+.reveal .text-grapefruit { color: var(--grapefruit); }
+.reveal .text-dark-purple { color: var(--dark-purple); }
+.reveal .text-sand { color: var(--sand); }
+.reveal .text-muted { opacity: 0.6; }
+
+.reveal .bg-dark {
+  background: var(--birne-black);
+  color: var(--white);
+}
+
+.reveal .gradient-text {
+  background: var(--ai-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.reveal .gradient-line {
+  width: 200px;
+  height: 4px;
+  background: var(--ai-gradient);
+  border: none;
+  border-radius: 2px;
+  margin: 1em 0;
+}
+
+.reveal .badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.55em;
+  font-weight: 500;
+  padding: 0.2em 0.8em;
+  border-radius: 20px;
+  margin: 0.2em 0.3em 0.2em 0;
+}
+
+.reveal .badge-purple {
+  background: var(--purple);
+  color: var(--birne-black);
+}
+
+.reveal .badge-lemon {
+  background: var(--lemon);
+  color: var(--birne-black);
+}
+
+.reveal .badge-grapefruit {
+  background: var(--grapefruit);
+  color: var(--white);
+}
+
+/* --- Workshop Block Cards --- */
+
+.reveal .block-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 0.8em;
+}
+
+.reveal .block-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1.2em;
+  border-left: 4px solid var(--dark-purple);
+}
+
+.reveal .block-card .block-card-number {
+  font-family: var(--font-display);
+  font-size: 1.4em;
+  color: var(--dark-purple);
+  margin-bottom: 0.2em;
+}
+
+.reveal .block-card .block-card-title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.7em;
+  margin-bottom: 0.2em;
+}
+
+.reveal .block-card .block-card-time {
+  font-family: var(--font-body);
+  font-size: 0.55em;
+  opacity: 0.5;
+}
+
+/* --- Comparison Table (CC vs Chatbot) --- */
+
+.reveal .comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 0.8em;
+}
+
+.reveal .comparison-col h3 {
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.3em;
+  border-bottom: 3px solid var(--dark-purple);
+}
+
+.reveal .comparison-col.highlight-col h3 {
+  border-bottom-color: var(--lemon);
+}
+
+/* --- Speaker Notes Override --- */
+
+.reveal aside.notes {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* --- Progress Bar --- */
+
+.reveal .progress {
+  height: 4px;
+  color: var(--dark-purple);
+}
+
+.reveal .progress span {
+  background: var(--ai-gradient);
+}
+
+/* --- Controls --- */
+
+.reveal .controls {
+  color: var(--dark-purple);
+}
+
+/* --- Responsive Adjustments --- */
+
+@media screen and (max-width: 1024px) {
+  .reveal {
+    font-size: 26px;
+  }
+
+  .reveal .slides section {
+    padding: 40px 50px;
+  }
+
+  .reveal .slides section.two-column .columns {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .reveal .block-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Print Styles --- */
+
+@media print {
+  .reveal .slides section {
+    page-break-after: always;
+  }
+
+  .reveal .slides section.section-title,
+  .reveal .slides section.code-example,
+  .reveal .slides section.quote,
+  .reveal .slides section.transition {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

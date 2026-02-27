@@ -1,0 +1,1234 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code pre marketérov | Birne Akadémia</title>
+
+  <!-- Reveal.js core CSS -->
+  <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
+
+  <!-- Birne custom theme -->
+  <link rel="stylesheet" href="css/birne-theme.css">
+
+  <!-- Highlight.js theme for code blocks -->
+  <link rel="stylesheet" href="node_modules/reveal.js/plugin/highlight/monokai.css">
+
+  <!-- JetBrains Mono from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ================================================
+           ÚVOD (Slides 1-4)
+           ================================================ -->
+
+      <!-- Slide 1 - Cover -->
+      <section class="section-title">
+        <img src="https://birne.sk/logo.svg" alt="Birne logo" style="height: 60px; margin-bottom: 1.5em; filter: brightness(0) invert(1); margin-right: auto;">
+        <hr class="accent-line">
+        <h1>Claude Code<br>pre marketérov</h1>
+        <p class="subtitle">Birne Akadémia | Workshop 2025</p>
+        <aside class="notes">
+          Privítanie účastníkov. Predstaviť sa - kto ste, čo robíte v Birne.
+          Povedať že dnes sa naučia používať AI agenta priamo vo svojom počítači.
+        </aside>
+      </section>
+
+      <!-- Slide 2 - O workshope -->
+      <section class="content">
+        <h2>Čo vás čaká za 4 hodiny</h2>
+        <div class="block-cards">
+          <div class="block-card">
+            <div class="block-card-number">01</div>
+            <div class="block-card-title">Terminál a inštalácia</div>
+            <div class="block-card-time">60 minút</div>
+          </div>
+          <div class="block-card">
+            <div class="block-card-number">02</div>
+            <div class="block-card-title">Súbory, kontext a príkazy</div>
+            <div class="block-card-time">60 minút</div>
+          </div>
+          <div class="block-card">
+            <div class="block-card-number">03</div>
+            <div class="block-card-title">MCP a prepojenia</div>
+            <div class="block-card-time">60 minút</div>
+          </div>
+          <div class="block-card">
+            <div class="block-card-number">04</div>
+            <div class="block-card-title">Git, nasadenie a prostredie</div>
+            <div class="block-card-time">60 minút</div>
+          </div>
+        </div>
+        <aside class="notes">
+          Rýchly prehľad čo ich čaká. 4 bloky po 60 minút s prestávkami medzi nimi.
+          Nastaviť očakávania - od základov terminálu po bežiacu aplikáciu.
+        </aside>
+      </section>
+
+      <!-- Slide 3 - Vibe coding má 1 rok -->
+      <section class="image-placeholder">
+        <h2>Vibe coding má 1 rok</h2>
+        <img src="assets/images/karpathy-vibe-coding.png" alt="Andrej Karpathy tweet o vibe codingu" style="max-height: 55vh; width: auto; align-self: center; object-fit: contain; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
+        <p class="subtitle">Február 2025 → Február 2026. Za ten rok sa zmenilo všetko.</p>
+        <aside class="notes">
+          Andrej Karpathy (ex-Tesla AI, OpenAI) v februári 2025 zadefinoval pojem "vibe coding" —
+          programovanie kde sa úplne odovzdáte AI, prijímate všetko čo navrhne, a "vidíte či to vibuje".
+          Za rok sa z mému stala realita — dnes takto pracujú celé tímy.
+        </aside>
+      </section>
+
+      <!-- Slide 4 - Kam to smeruje -->
+      <section class="two-column">
+        <h2>Kam to smeruje</h2>
+        <div class="columns">
+          <div class="col">
+            <img src="assets/images/spotify-ai-developers.png" alt="Spotify — AI píše väčšinu kódu" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
+            <p style="font-size: 0.55em; opacity: 0.7; margin-top: 0.5em;">Spotify: vývojári od decembra 2025 nepíšu väčšinu kódu sami</p>
+          </div>
+          <div class="col">
+            <img src="assets/images/metr-benchmark.png" alt="METR benchmark — rast schopností AI" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
+            <p style="font-size: 0.55em; opacity: 0.7; margin-top: 0.5em;">METR: AI rieši čoraz komplexnejšie úlohy, exponenciálny rast</p>
+          </div>
+        </div>
+        <aside class="notes">
+          Dva dôležité signály: 1) Spotify CEO povedal že ich developeri od decembra 2025 nepíšu väčšinu kódu —
+          AI agenti to robia za nich. 2) METR benchmark ukazuje exponenciálny rast schopností AI v reálnych
+          softvérových úlohách. Toto nie je budúcnosť — toto sa deje teraz.
+        </aside>
+      </section>
+
+      <!-- Slide 5 - Čo je Claude Code -->
+      <section class="two-column">
+        <h2>Čo je Claude Code</h2>
+        <div class="columns">
+          <div class="col">
+            <p><strong>Nie je to chatbot v prehliadači.</strong></p>
+            <p>Je to <span class="text-grapefruit">AI agent</span> vo vašom počítači. Číta vaše súbory, píše kód, spúšťa príkazy.</p>
+          </div>
+          <div class="col">
+            <img src="assets/images/claude-code-terminal.png" alt="Claude Code v termináli" style="border-radius:12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15);">
+          </div>
+        </div>
+        <aside class="notes">
+          Kľúčový rozdiel oproti ChatGPT alebo Claude.ai v prehliadači.
+          CC beží priamo na vašom počítači, má prístup k súborom, vie spúšťať príkazy.
+          Nie je to len Q&A - je to agent ktorý koná.
+        </aside>
+      </section>
+
+      <!-- Slide 4 - Pravidlá workshopu -->
+      <section class="content">
+        <h2>Pravidlá workshopu</h2>
+        <ul>
+          <li><strong>Pýtajte sa kedykoľvek</strong> - hlúpe otázky neexistujú</li>
+          <li><strong>Vlastné tempo je OK</strong> - nie je to preteky</li>
+          <li><strong>Prestávky</strong> medzi každým blokom</li>
+          <li><strong>Chyby sú súčasť učenia</strong> - aj AI sa mýli</li>
+        </ul>
+        <aside class="notes">
+          Vytvoriť bezpečné prostredie. Mnoho účastníkov nikdy nepoužilo terminál.
+          Dôležité je aby sa nebáli pýtať a skúšať.
+        </aside>
+      </section>
+
+      <!-- ================================================
+           BLOK 1: Terminál a inštalácia (Slides 5-16)
+           ================================================ -->
+
+      <!-- Slide 5 - Section title Blok 1 -->
+      <section class="section-title">
+        <div class="block-number">01</div>
+        <h2>Terminál a inštalácia</h2>
+        <span class="time-badge">60 minút</span>
+        <aside class="notes">
+          Začíname prvý blok. Cieľ: každý bude mať nainštalovaný a funkčný Claude Code.
+          Začneme od základov terminálu.
+        </aside>
+      </section>
+
+      <!-- Slide 6 - Čo je terminál -->
+      <section class="two-column">
+        <h2>Čo je terminál</h2>
+        <div class="columns">
+          <div class="col">
+            <p>Terminál = <strong>textové rozhranie</strong> pre váš počítač.</p>
+            <p>Píšete príkazy, dostávate odpovede. Chatovanie s počítačom.</p>
+          </div>
+          <div class="col">
+            <img src="assets/images/retro-terminal.jpg" alt="Retro terminál" style="border-radius:12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15);">
+          </div>
+        </div>
+        <aside class="notes">
+          Analógia: terminál je ako SMS s počítačom. Namiesto klikania na ikony
+          píšete textové správy a počítač odpovedá textom.
+          GUI = grafické rozhranie (to čo poznáte), CLI = príkazový riadok.
+        </aside>
+      </section>
+
+      <!-- Slide 7 - Prečo terminál -->
+      <section class="two-column">
+        <h2>Prečo terminál</h2>
+        <div class="columns">
+          <div class="col">
+            <ul>
+              <li><strong>Automatizácia</strong> - opakujúce sa úlohy jedným príkazom</li>
+              <li><strong>Presnosť</strong> - príkazy sú jednoznačné</li>
+              <li><strong>Sila</strong> - veci čo v GUI nejdú</li>
+              <li><strong>AI agenti bežia v termináli</strong> - to je to hlavné</li>
+            </ul>
+          </div>
+          <div class="col">
+            <img src="assets/images/karpathy-cli-tweet.png" alt="Andrej Karpathy o CLI a AI agentoch" style="max-height: 350px; object-fit: contain; border-radius:12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
+          </div>
+        </div>
+        <aside class="notes">
+          Motivácia prečo sa oplatí prekonať počiatočnú bariéru.
+          Andrej Karpathy (ex-Tesla AI, OpenAI) hovorí: CLI sú super pre AI agentov,
+          lebo agenti vedia natívne používať terminálové nástroje.
+          Posledný bod je kľúčový - ak chcete používať AI agentov, terminál je nutnosť.
+        </aside>
+      </section>
+
+      <!-- Slide 8 - Ghostty -->
+      <section class="two-column">
+        <h2>Ghostty - moderný terminál</h2>
+        <div class="columns">
+          <div class="col">
+            <ul>
+              <li>Rýchly, pekný, jednoduché nastavenia</li>
+              <li>Natívny na macOS aj Linux</li>
+              <li>GPU-akcelerovaný rendering</li>
+              <li>Témy, fonty, splitovanie okien</li>
+            </ul>
+            <p class="text-muted">ghostty.org</p>
+          </div>
+          <div class="col">
+            <img src="assets/images/ghostty-preview.png" alt="Ghostty terminál" style="border-radius:12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15);">
+          </div>
+        </div>
+        <aside class="notes">
+          Prečo Ghostty a nie default Terminal.app alebo cmd.exe.
+          Ghostty je moderný, rýchly, pekný. Účastníci by ho mali mať predinstalovaný.
+          Alternatívy: iTerm2 (Mac), Windows Terminal (Windows).
+        </aside>
+      </section>
+
+      <!-- Slide 9 - Základné príkazy -->
+      <section class="code-example">
+        <h2>Základné príkazy</h2>
+        <div>
+          <p class="terminal-prompt">pwd</p>
+          <p class="text-muted" style="font-size:0.7em; margin-left:1.5em;">kde som? (print working directory)</p>
+        </div>
+        <div>
+          <p class="terminal-prompt">ls</p>
+          <p class="text-muted" style="font-size:0.7em; margin-left:1.5em;">čo tu je? (list)</p>
+        </div>
+        <div>
+          <p class="terminal-prompt">cd workshop</p>
+          <p class="text-muted" style="font-size:0.7em; margin-left:1.5em;">presun sa (change directory)</p>
+        </div>
+        <div>
+          <p class="terminal-prompt">mkdir projekty</p>
+          <p class="text-muted" style="font-size:0.7em; margin-left:1.5em;">vytvor priečinok (make directory)</p>
+        </div>
+        <aside class="notes">
+          Nechať účastníkov skúšať každý príkaz. Po každom fragmente zastaviť a overiť
+          že všetci rozumejú. pwd je najdôležitejší - vždy vedieť kde ste.
+        </aside>
+      </section>
+
+      <!-- Slide 10 - Cvičenie: Navigácia -->
+      <section class="checklist">
+        <h2>Cvičenie: Navigácia v termináli</h2>
+        <ul class="checklist-items">
+          <li>Otvorte Ghostty</li>
+          <li>Napíšte <code>pwd</code> - kde ste?</li>
+          <li>Napíšte <code>ls</code> - čo vidíte?</li>
+          <li>Vytvorte priečinok: <code>mkdir workshop</code></li>
+          <li>Presuňte sa doň: <code>cd workshop</code></li>
+        </ul>
+        <aside class="notes">
+          Prvé hands-on cvičenie. Chodiť medzi účastníkmi, pomáhať.
+          Typické problémy: medzery v názvoch priečinkov, veľké/malé písmená.
+          Dať dostatočný čas - toto je základ na ktorom staviame.
+        </aside>
+      </section>
+
+      <!-- Slide 11 - Node.js inštalácia -->
+      <section class="code-example">
+        <h2>Node.js</h2>
+        <p>Runtime pre JavaScript - potrebujeme ho na inštaláciu Claude Code.</p>
+        <div>
+          <p class="terminal-prompt">node --version</p>
+          <p class="text-muted" style="font-size:0.65em; margin-left:1.5em;">overenie či už máte Node.js</p>
+        </div>
+        <div style="margin-top:1em;">
+          <p style="font-size:0.8em; color: var(--purple); opacity: 1;">Ak nie → stiahnite z <span class="badge-purple" style="font-size:0.9em;">nodejs.org</span></p>
+          <p class="text-muted" style="font-size:0.65em;">Download → LTS verzia → nainštalovať → reštartovať terminál</p>
+        </div>
+        <aside class="notes">
+          Node.js je predpoklad pre Claude Code.
+          Najjednoduchšie pre všetkých: nodejs.org → Download LTS → preklikiať inštalátor.
+          Po inštalácii TREBA reštartovať terminál aby sa node objavil v PATH.
+          Overiť cez node --version - malo by ukázať číslo verzie (napr. v22.x.x).
+        </aside>
+      </section>
+
+      <!-- Slide 12 - Claude Code inštalácia -->
+      <section class="code-example">
+        <h2>Inštalácia Claude Code</h2>
+        <div>
+          <p class="terminal-prompt">npm install -g @anthropic-ai/claude-code</p>
+          <p class="text-muted" style="font-size:0.65em; margin-left:1.5em;">nainštaluje Claude Code globálne</p>
+        </div>
+        <div>
+          <p class="terminal-prompt">claude</p>
+          <p class="text-muted" style="font-size:0.65em; margin-left:1.5em;">prvé spustenie → automaticky otvorí prehliadač</p>
+        </div>
+        <div>
+          <p style="font-size:0.8em; color: var(--purple); margin-top:1em;">
+            Prihláste sa v prehliadači cez Claude Pro alebo Team účet
+          </p>
+          <p class="text-muted" style="font-size:0.65em;">
+            Po prihlásení sa terminál sám prepne do Claude Code
+          </p>
+        </div>
+        <aside class="notes">
+          Najdôležitejší moment workshopu - každý musí mať funkčný Claude Code.
+          Po napísaní "claude" sa automaticky otvorí prehliadač s prihlásením.
+          Používateľ sa prihlási v prehliadači, terminál sa automaticky prepne.
+          Netreba nič kopírovať ani zadávať tokeny.
+          Ak npm nefunguje, skúsiť: sudo npm install -g @anthropic-ai/claude-code
+        </aside>
+      </section>
+
+      <!-- Slide 13 - Cvičenie: Inštalácia -->
+      <section class="checklist">
+        <h2>Cvičenie: Inštalácia</h2>
+        <ul class="checklist-items">
+          <li>Nainštalujte Node.js (ak ešte nemáte)</li>
+          <li>Spustite <code>npm install -g @anthropic-ai/claude-code</code></li>
+          <li>Spustite <code>claude</code></li>
+          <li>Prihláste sa cez prehliadač</li>
+          <li>Overte: <code>"Povedz mi vtip"</code></li>
+        </ul>
+        <aside class="notes">
+          Dať dostatok času. Chodiť medzi účastníkmi, pomáhať individuálne.
+          Typické problémy: permissions (sudo), firewall, starší Node.js.
+          Wow moment keď CC prvýkrát odpovedá v termináli.
+        </aside>
+      </section>
+
+      <!-- Slide 14 - Prvá úloha -->
+      <section class="code-example">
+        <h2>Prvá úloha pre Claude Code</h2>
+        <pre><code class="language-plaintext" data-trim data-noescape>
+> Vytvor mi zoznam 10 postov na LinkedIn o AI v marketingu
+        </code></pre>
+        <div>
+          <p style="font-size:0.75em; color: var(--purple); margin-top:1em;">
+            Claude Code analyzuje požiadavku, generuje obsah, ukladá výsledok.
+          </p>
+          <p style="font-size:0.65em; color: var(--sand-light); opacity:0.7;">
+            AI agent v akcii — bez copy-paste, bez prepínania okien.
+          </p>
+        </div>
+        <aside class="notes">
+          Wow moment. Ukázať ako CC rozmýšľa a generuje odpoveď.
+          Nechať aj účastníkov skúsiť vlastné prompty.
+          Poukázať na to že toto je zatiaľ rovnaké ako chatbot - ale to sa zmení.
+        </aside>
+      </section>
+
+      <!-- Slide 15 - Rozdiely CC vs chatbot -->
+      <section class="two-column">
+        <h2>CC vs Chatbot</h2>
+        <div class="columns">
+          <div class="col">
+            <h3 style="color: var(--dark-purple);">Chatbot</h3>
+            <ul>
+              <li>V prehliadači</li>
+              <li>Jedno okno</li>
+              <li>Copy-paste</li>
+              <li>Bez prístupu k súborom</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3 style="color: var(--grapefruit);">Claude Code</h3>
+            <ul>
+              <li>V termináli</li>
+              <li>Celý počítač</li>
+              <li>Priama práca so súbormi</li>
+              <li>Skripty a automatizácia</li>
+            </ul>
+          </div>
+        </div>
+        <aside class="notes">
+          Toto je kľúčová motivácia pre zvyšok workshopu.
+          Chatbot = izolovaný, CC = integrovaný do vášho workflow.
+          Zvyšok workshopu ukáže prečo je ten rozdiel dôležitý.
+        </aside>
+      </section>
+
+      <!-- Slide 16 - Zhrnutie bloku 1 -->
+      <section class="content">
+        <h2>Zhrnutie: Blok 1</h2>
+        <ul>
+          <li>Terminál nie je strašný - je to len textové rozhranie</li>
+          <li>Základné príkazy: <code>pwd</code>, <code>ls</code>, <code>cd</code>, <code>mkdir</code></li>
+          <li>Claude Code beží na vašom počítači</li>
+          <li>CC vie odpovedať na otázky aj generovať obsah</li>
+        </ul>
+        <aside class="notes">
+          Prechod na prestávku. Pochváliť účastníkov za prvý blok.
+          Pripomenúť že po prestávke začneme pracovať so súbormi.
+        </aside>
+      </section>
+
+      <!-- ================================================
+           TRANSITION - Prestávka 1
+           ================================================ -->
+
+      <!-- Slide 17 - Prestávka -->
+      <section class="transition">
+        <h2>Prestávka</h2>
+        <p style="font-size:1.8em; color: var(--lemon);">10 min</p>
+        <img src="https://birne.sk/logo.svg" alt="Birne" class="transition-logo">
+        <aside class="notes">
+          10 minút prestávka. Byť k dispozícii pre individuálne otázky.
+          Skontrolovať že všetci majú funkčný Claude Code.
+        </aside>
+      </section>
+
+      <!-- ================================================
+           BLOK 2: Súbory, kontext a príkazy (Slides 18-29)
+           ================================================ -->
+
+      <!-- Slide 18 - Section title Blok 2 -->
+      <section class="section-title">
+        <div class="block-number">02</div>
+        <h2>Súbory, kontext a príkazy</h2>
+        <span class="time-badge">60 minút</span>
+        <aside class="notes">
+          Druhý blok. Tu sa CC začne odlišovať od chatbota.
+          Pracujeme so súbormi, nastavujeme kontext, učíme sa príkazy.
+        </aside>
+      </section>
+
+      <!-- Slide 19 - CC číta vaše súbory -->
+      <section class="content">
+        <h2>CC číta vaše súbory</h2>
+        <ul>
+          <li>Claude Code vie <strong>čítať, vytvárať a editovať</strong> súbory</li>
+          <li>Nemusíte copy-paste do chatbota</li>
+          <li>Pracuje <strong>priamo</strong> s vašimi dátami</li>
+          <li>Toto je <span class="text-purple">game changer</span></li>
+        </ul>
+        <aside class="notes">
+          Kľúčová výhoda oproti webovému Claude. Ukázať na živom príklade:
+          vytvoriť textový súbor a požiadať CC aby ho prečítal a upravil.
+        </aside>
+      </section>
+
+      <!-- Slide 20 - Analýza PDF -->
+      <section class="code-example">
+        <h2>Analýza PDF</h2>
+        <pre><code class="language-plaintext" data-trim data-noescape>
+> Analyzuj tento PDF report a vytvor
+  zhrnutie kľúčových bodov
+
+Claude Code číta report.pdf...
+Našiel som 24-stránkový report o Q4 výsledkoch.
+
+Tu je zhrnutie:
+1. Celkový revenue vzrástol o 15%...
+2. Najúspešnejšia kampaň bola...
+3. Odporúčania na Q1...
+        </code></pre>
+        <aside class="notes">
+          Praktická ukážka s reálnym PDF. Pripraviť vopred vzorový PDF report.
+          Poukázať na to že CC vie spracovať aj dlhé dokumenty.
+        </aside>
+      </section>
+
+      <!-- Slide 21 - Analýza obrázkov -->
+      <section class="code-example">
+        <h2>Analýza obrázkov</h2>
+        <pre><code class="language-plaintext" data-trim data-noescape>
+> [drag & drop screenshot do terminálu]
+  Čo vidíš na tomto screenshote? Aké sú hlavné
+  problémy s UX?
+
+Claude Code analyzuje obrázok...
+
+Vidím landing page s niekoľkými UX problémami:
+1. CTA tlačidlo je príliš malé a málo kontrastné
+2. Navigácia má 8 položiek — odporúčam max 5
+3. Hero sekcia nemá jasný value proposition
+        </code></pre>
+        <aside class="notes">
+          Drag & drop obrázku priamo do terminálu — CC ho vie analyzovať.
+          Funguje so screenshotmi, grafmi, logami, mockupmi.
+          Ukázať naživo: pretiahnuť screenshot webu a opýtať sa na UX feedback.
+        </aside>
+      </section>
+
+      <!-- Slide 22 - Práca s CSV -->
+      <section class="code-example">
+        <h2>Práca s CSV alebo XLSX</h2>
+        <pre><code class="language-plaintext" data-trim data-noescape>
+> Spracuj tento CSV a vytvor prehľad
+  top 10 kampaní podľa ROI
+
+Claude Code analyzuje kampane.csv...
+Súbor obsahuje 847 riadkov, 12 stĺpcov.
+
+Top 10 kampaní podľa ROI:
+┌────────────────────┬───────┬──────────┐
+│ Kampaň             │ ROI   │ Spend    │
+├────────────────────┼───────┼──────────┤
+│ Summer_Sale_IG     │ 4.2x  │ €2,340   │
+│ Retarget_Email_Q3  │ 3.8x  │ €890     │
+│ ...                │ ...   │ ...      │
+└────────────────────┴───────┴──────────┘
+        </code></pre>
+        <aside class="notes">
+          Marketéri denne pracujú s CSV exportmi z ad platforiem.
+          CC vie dáta nielen prečítať, ale aj analyzovať a vizualizovať.
+          Pripraviť vzorový CSV s marketingovými dátami.
+        </aside>
+      </section>
+
+      <!-- Slide 22 - Cvičenie: Analýza dát -->
+      <section class="checklist">
+        <h2>Cvičenie: Analýza dát</h2>
+        <ul class="checklist-items">
+          <li>Stiahnite vzorový CSV/XLSX súbor</li>
+          <li>Požiadajte CC o analýzu: <code>"Analyzuj tento CSV"</code></li>
+          <li>Nechajte CC vytvoriť výstup alebo graf</li>
+        </ul>
+        <aside class="notes">
+          Pripraviť vzorové súbory vopred a zdieľať cez link alebo USB.
+          Účastníci môžu použiť aj vlastné CSV súbory ak ich majú.
+        </aside>
+      </section>
+
+      <!-- Slide 23 - CLAUDE.md -->
+      <section class="two-column">
+        <h2>CLAUDE.md</h2>
+        <div class="columns">
+          <div class="col">
+            <p><strong>Pamäť projektu</strong> - inštrukcie pre Claude Code.</p>
+            <p>Ako projektový brief pre AI agenta. CC si ho prečíta pri každom spustení.</p>
+            <ul style="font-size:0.7em; margin-top:0.8em;">
+              <li>Definovať tón komunikácie a cieľovú skupinu</li>
+              <li>Uviesť štruktúru projektu a dôležité súbory</li>
+              <li>Nastaviť formát výstupu (jazyk, dĺžka, štýl)</li>
+            </ul>
+          </div>
+          <div class="col">
+            <img src="assets/images/claude-md-preview.png" alt="CLAUDE.md súbor" style="border-radius:12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
+          </div>
+        </div>
+        <aside class="notes">
+          CLAUDE.md je ako projektový brief pre AI agenta. Každý projekt by mal mať svoj.
+          CC ho automaticky načíta pri spustení - nemusíte ho zakaždým opisovať.
+        </aside>
+      </section>
+
+      <!-- Slide 24 - memory.md -->
+      <section class="two-column">
+        <h2>Memory - dlhodobá pamäť</h2>
+        <div class="columns">
+          <div class="col">
+            <ul>
+              <li><strong>Pamäť naprieč konverzáciami</strong> - CC si pamätá vaše preferencie</li>
+              <li><strong>Automatická</strong> - CC sa učí z vašich interakcií</li>
+              <li><strong>Editovateľná</strong> - viete ju upraviť alebo vymazať</li>
+              <li>"Pamätaj si že vždy používam slovenčinu"</li>
+            </ul>
+          </div>
+          <div class="col">
+            <img src="assets/images/claude-memory.png" alt="Claude Code memory" style="border-radius:12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
+          </div>
+        </div>
+        <aside class="notes">
+          Memory je osobná, CLAUDE.md je projektová. Obe sú dôležité.
+          Príklad: ak poviete CC "pamätaj si že som marketér v e-commerce",
+          bude to vedieť aj v budúcich konverzáciách.
+        </aside>
+      </section>
+
+      <!-- Slide 25 - Cvičenie: Projekt setup -->
+      <section class="checklist">
+        <h2>Cvičenie: Váš prvý projekt</h2>
+        <ul class="checklist-items">
+          <li>Vytvorte priečinok pre váš projekt</li>
+          <li>Požiadajte CC: <code>"Vytvor CLAUDE.md pre môj nový projekt"</code></li>
+          <li>Definujte cieľ, cieľovku, tón komunikácie</li>
+          <li>Otestujte: <code>"Napíš email podľa CLAUDE.md"</code></li>
+        </ul>
+        <aside class="notes">
+          Účastníci si definujú vlastný marketingový projekt. Kto nevie, navrhnúť:
+          email kampane pre e-shop, social media pre kaviareň, newsletter pre SaaS.
+          CC by mal generovať obsah konzistentný s CLAUDE.md.
+        </aside>
+      </section>
+
+      <!-- Slide 26 - Plan mode -->
+      <section class="code-example">
+        <h2>Plan mode</h2>
+        <p style="color: var(--lemon); font-size:0.85em;">Shift+Tab → prepnutie do plan mode</p>
+        <p style="font-size:0.7em; color: var(--sand-light); opacity:0.8; margin-bottom:0.5em;">Pre komplexné úlohy CC najprv navrhne postup a čaká na vaše schválenie. Predídete nechceným zmenám a máte kontrolu nad procesom.</p>
+        <pre><code class="language-plaintext" data-trim data-noescape>
+> [plan mode] Vytvor emailovú kampaň
+  pre Black Friday
+
+CC navrhne plán:
+1. Analyzujem CLAUDE.md pre kontext
+2. Vytvorím 3 varianty subject line
+3. Napíšem telo emailu
+4. Pripravím A/B test verzie
+5. Uložím do súborov
+
+Súhlasíte? (y/n)
+        </code></pre>
+        <aside class="notes">
+          Plan mode je ideálny pre komplexnejšie úlohy. CC najprv navrhne postup,
+          vy schválite alebo upravíte, potom CC implementuje.
+          Shift+Tab prepína medzi normal a plan mode.
+        </aside>
+      </section>
+
+      <!-- Slide 27 - Slash commands -->
+      <section class="code-example">
+        <h2>Slash commands</h2>
+        <div>
+          <p class="terminal-prompt">/help</p>
+          <p class="text-muted" style="font-size:0.65em; margin-left:1.5em;">zobraziť nápovedu</p>
+        </div>
+        <div>
+          <p class="terminal-prompt">/clear</p>
+          <p class="text-muted" style="font-size:0.65em; margin-left:1.5em;">vyčistiť konverzáciu</p>
+        </div>
+        <div>
+          <p class="terminal-prompt">/compact</p>
+          <p class="text-muted" style="font-size:0.65em; margin-left:1.5em;">zmenšiť kontext (uvoľniť pamäť)</p>
+        </div>
+        <div>
+          <p class="terminal-prompt">/model</p>
+          <p class="text-muted" style="font-size:0.65em; margin-left:1.5em;">zmeniť AI model</p>
+        </div>
+        <aside class="notes">
+          Quick reference. /compact je asi najdôležitejší - keď CC začne "zabúdať",
+          compact zhustí kontext a uvoľní miesto. /clear vymaže celú konverzáciu.
+        </aside>
+      </section>
+
+      <!-- Slide 28 - Kontextové okno -->
+      <section class="two-column">
+        <h2>Kontextové okno</h2>
+        <div class="columns">
+          <div class="col">
+            <ul>
+              <li><strong>Kontext</strong> = pamäť v rámci jednej konverzácie</li>
+              <li>Má <strong>obmedzenú veľkosť</strong> - ako RAM v počítači</li>
+              <li>Čím viac toho CC spracuje, tým menej miesta zostáva</li>
+              <li><code>/compact</code> = zmenšiť a uvoľniť miesto</li>
+            </ul>
+          </div>
+          <div class="col">
+            <img src="assets/images/claude-context.png" alt="Claude Code /context" style="border-radius:12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15);">
+          </div>
+        </div>
+        <aside class="notes">
+          Analógia: kontext je RAM vášho AI asistenta. Keď sa zaplní, začne zabúdať
+          staršie veci. /compact zhustí konverzáciu a uvoľní miesto.
+          Preto je dobré robiť úlohy postupne a nie všetko naraz.
+        </aside>
+      </section>
+
+      <!-- Slide 29 - Zhrnutie bloku 2 -->
+      <section class="content">
+        <h2>Zhrnutie: Blok 2</h2>
+        <ul>
+          <li>CC vie pracovať so súbormi - PDF, CSV, text</li>
+          <li><strong>CLAUDE.md</strong> = projektový brief pre CC</li>
+          <li><strong>Memory</strong> = osobné preferencie</li>
+          <li>Plan mode, slash commands, kontext</li>
+        </ul>
+        <p style="margin-top:1em; font-size:0.85em;">CC je ako kolega ktorý rozumie vášmu projektu.</p>
+        <aside class="notes">
+          Prechod na prestávku. Kľúčový takeaway: CC nie je generic chatbot,
+          je to kontextový asistent ktorý rozumie vášmu projektu.
+        </aside>
+      </section>
+
+      <!-- ================================================
+           TRANSITION - Prestávka 2
+           ================================================ -->
+
+      <!-- Slide 30 - Prestávka -->
+      <section class="transition">
+        <h2>Prestávka</h2>
+        <p style="font-size:1.8em; color: var(--lemon);">10 min</p>
+        <img src="https://birne.sk/logo.svg" alt="Birne" class="transition-logo">
+        <aside class="notes">
+          Prestávka. Polovica workshopu za nami. Po prestávke MCP - prepojenia.
+        </aside>
+      </section>
+
+      <!-- ================================================
+           BLOK 3: MCP a prepojenia (Slides 31-42)
+           ================================================ -->
+
+      <!-- Slide 31 - Section title Blok 3 -->
+      <section class="section-title">
+        <div class="block-number">03</div>
+        <h2>MCP a prepojenia</h2>
+        <span class="time-badge">60 minút</span>
+        <aside class="notes">
+          Tretí blok. MCP = Model Context Protocol. Spôsob ako CC prepojiť s externými nástrojmi.
+          Toto je pokročilá téma ale ukážeme ju jednoducho.
+        </aside>
+      </section>
+
+      <!-- Slide 32 - Čo je MCP -->
+      <section class="two-column">
+        <h2>Čo je MCP</h2>
+        <div class="columns">
+          <div class="col">
+            <p><strong>Model Context Protocol</strong></p>
+            <p>Spôsob ako CC prepojiť s externými nástrojmi a službami.</p>
+            <p style="margin-top:1em; font-size:0.85em;">Analógia: MCP je ako <span class="text-grapefruit">USB port</span> pre AI.</p>
+          </div>
+          <div class="col">
+            <img src="assets/images/mcp-diagram.jpg" alt="Before MCP vs After MCP" style="border-radius:12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
+          </div>
+        </div>
+        <aside class="notes">
+          MCP je USB port pre AI. Tak ako USB porty umožňujú pripojiť myš, klávesnicu,
+          tlačiareň - MCP umožňuje pripojiť Drive, Slack, Notion, atď.
+        </aside>
+      </section>
+
+
+
+
+
+      <!-- Slide 41 - Prehľad MCP ekosystému -->
+      <section class="content">
+        <h2>MCP ekosystém</h2>
+        <div class="block-cards">
+          <div class="block-card" style="border-left-color: var(--purple);">
+            <div class="block-card-title">Komunikácia</div>
+            <div class="block-card-time">Gmail, Slack, Outlook</div>
+          </div>
+          <div class="block-card" style="border-left-color: var(--lemon); background: var(--sand-light);">
+            <div class="block-card-title">Dáta & Docs</div>
+            <div class="block-card-time">Google Drive, Notion, Airtable</div>
+          </div>
+          <div class="block-card" style="border-left-color: var(--grapefruit);">
+            <div class="block-card-title">Marketing</div>
+            <div class="block-card-time">HubSpot, Analytics, Search Console</div>
+          </div>
+          <div class="block-card" style="border-left-color: var(--dark-purple);">
+            <div class="block-card-title">Development</div>
+            <div class="block-card-time">GitHub, Supabase, Figma</div>
+          </div>
+        </div>
+        <aside class="notes">
+          Inšpirácia čo všetko je možné. Nový MCP servery pribúdajú každý deň.
+          Komunita je veľmi aktívna - mcp.so pre zoznam dostupných serverov.
+        </aside>
+      </section>
+
+      <!-- Slide - Plugins -->
+      <section class="two-column">
+        <h2>Plugins</h2>
+        <div class="columns">
+          <div class="col">
+            <p><strong>Rozšírenia priamo v Claude Code.</strong></p>
+            <ul>
+              <li>Inštalácia cez <code>/plugin</code></li>
+              <li>Komunita + oficiálne pluginy</li>
+              <li>Nové príkazy, agenti, skills</li>
+              <li>Jedným klikom nainštalované</li>
+            </ul>
+          </div>
+          <div class="col">
+            <img src="assets/images/cc-plugins.png" alt="Claude Code plugins" style="border-radius:12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15);">
+          </div>
+        </div>
+        <aside class="notes">
+          Plugins sú rozšírenia pre Claude Code. Pridávajú nové schopnosti -
+          príkazy, agentov, skills. Inštalácia cez /plugin → Discover.
+          Komunita rastie, nové pluginy pribúdajú.
+        </aside>
+      </section>
+
+      <!-- Slide - Connectors -->
+      <section class="two-column">
+        <h2>Connectors</h2>
+        <div class="columns">
+          <div class="col">
+            <p><strong>Prepojenia v Claude.ai</strong> (webové rozhranie).</p>
+            <ul>
+              <li>Ahrefs, Notion, Figma, Supabase...</li>
+              <li>Fungujú v prehliadači aj v CC</li>
+              <li>Oficiálne integrované Anthropicom</li>
+              <li>Bez inštalácie - stačí pripojiť</li>
+            </ul>
+          </div>
+          <div class="col">
+            <img src="assets/images/claude-connectors.png" alt="Claude Connectors" style="border-radius:12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
+          </div>
+        </div>
+        <aside class="notes">
+          Connectors sú oficiálne integrácie od Anthropicu. Fungujú v Claude.ai
+          aj v Claude Code. Nevyžadujú technickú inštaláciu - len pripojiť účet.
+          Pre marketérov zaujímavé: Ahrefs, Notion, Figma.
+        </aside>
+      </section>
+
+      <!-- Slide - MCP vs Plugins vs Connectors -->
+      <section class="content">
+        <h2>MCP vs Plugins vs Connectors</h2>
+        <table style="width:100%; font-size:0.7em; border-collapse:collapse; margin-top:0.5em;">
+          <thead>
+            <tr style="border-bottom:3px solid var(--dark-purple);">
+              <th style="text-align:left; padding:0.5em;">&#8203;</th>
+              <th style="text-align:left; padding:0.5em;">MCP</th>
+              <th style="text-align:left; padding:0.5em;">Plugins</th>
+              <th style="text-align:left; padding:0.5em;">Connectors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid rgba(34,25,36,0.1);">
+              <td style="padding:0.5em;"><strong>Kde</strong></td>
+              <td style="padding:0.5em;">Claude Code</td>
+              <td style="padding:0.5em;">Claude Code</td>
+              <td style="padding:0.5em;">Claude.ai + CC</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(34,25,36,0.1);">
+              <td style="padding:0.5em;"><strong>Inštalácia</strong></td>
+              <td style="padding:0.5em;"><code>claude mcp add</code></td>
+              <td style="padding:0.5em;"><code>/plugin</code></td>
+              <td style="padding:0.5em;">Pripojiť účet</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(34,25,36,0.1);">
+              <td style="padding:0.5em;"><strong>Kto robí</strong></td>
+              <td style="padding:0.5em;">Komunita / vy</td>
+              <td style="padding:0.5em;">Komunita</td>
+              <td style="padding:0.5em;">Anthropic + partneri</td>
+            </tr>
+            <tr>
+              <td style="padding:0.5em;"><strong>Príklad</strong></td>
+              <td style="padding:0.5em;">Supabase, Web search</td>
+              <td style="padding:0.5em;">Context7, GitHub</td>
+              <td style="padding:0.5em;">Ahrefs, Notion, Figma</td>
+            </tr>
+          </tbody>
+        </table>
+        <aside class="notes">
+          Tri spôsoby ako rozšíriť Claude Code. MCP = technickejšie, flexibilné.
+          Plugins = jednoduché, komunita. Connectors = oficiálne, bez inštalácie.
+          Pre marketérov sú connectors najjednoduchšie na začiatok.
+        </aside>
+      </section>
+
+      <!-- Slide 42 - Zhrnutie bloku 3 -->
+      <section class="content">
+        <h2>Zhrnutie: Blok 3</h2>
+        <ul>
+          <li>MCP, Plugins a Connectors rozširujú CC</li>
+          <li>Každý spôsob má svoje miesto</li>
+          <li>Jeden AI agent → prístup ku <strong>všetkým</strong> nástrojom</li>
+        </ul>
+        <aside class="notes">
+          Prechod na poslednú prestávku. Tri spôsoby rozšírenia CC.
+          Posledný blok bude o Git a nasadení - ako dostať projekt online.
+        </aside>
+      </section>
+
+      <!-- ================================================
+           TRANSITION - Prestávka 3
+           ================================================ -->
+
+      <!-- Slide 43 - Prestávka -->
+      <section class="transition">
+        <h2>Prestávka</h2>
+        <p style="font-size:1.8em; color: var(--lemon);">10 min</p>
+        <img src="https://birne.sk/logo.svg" alt="Birne" class="transition-logo">
+        <aside class="notes">
+          Posledná prestávka. Posledný blok - Git, Supabase, Render.
+          Motivovať: na konci budete mať projekt online.
+        </aside>
+      </section>
+
+      <!-- ================================================
+           BLOK 4: Git, nasadenie a prostredie (Slides 44-55)
+           ================================================ -->
+
+      <!-- Slide 44 - Section title Blok 4 -->
+      <section class="section-title">
+        <div class="block-number">04</div>
+        <h2>Git, nasadenie a prostredie</h2>
+        <span class="time-badge">60 minút</span>
+        <aside class="notes">
+          Posledný blok. Od verziovania po bežiacu aplikáciu.
+          Cieľ: každý bude mať projekt na internete.
+        </aside>
+      </section>
+
+      <!-- Slide 45 - Prečo verziovať -->
+      <section class="two-column">
+        <h2>Prečo verziovať</h2>
+        <div class="columns">
+          <div class="col">
+            <ul>
+              <li><strong>História zmien</strong> - vrátiť sa k predchádzajúcej verzii</li>
+              <li><strong>Spolupráca</strong> - viacerí ľudia na jednom projekte</li>
+              <li><strong>Záloha</strong> - kód v cloude, nie len na vašom disku</li>
+              <li>Aj marketingové projekty si zaslúžia verziovanie</li>
+            </ul>
+          </div>
+          <div class="col">
+            <img src="assets/images/git-branches-merge.png" alt="Git branches a merge">
+          </div>
+        </div>
+        <aside class="notes">
+          Git nie je len pre programátorov. Ak pracujete s CC a generujete súbory,
+          chcete mať históriu. Analógia: Ctrl+Z na steroidy.
+        </aside>
+      </section>
+
+      <!-- Slide 46 - Git základy -->
+      <section class="code-example">
+        <h2>Git: 3 príkazy</h2>
+        <div>
+          <p class="terminal-prompt">git init</p>
+          <p class="text-muted" style="font-size:0.65em; margin-left:1.5em;">zapni verziovanie v tomto priečinku</p>
+        </div>
+        <div>
+          <p class="terminal-prompt">git add .</p>
+          <p class="text-muted" style="font-size:0.65em; margin-left:1.5em;">označ všetky zmeny na uloženie</p>
+        </div>
+        <div>
+          <p class="terminal-prompt">git commit -m "prvý commit"</p>
+          <p class="text-muted" style="font-size:0.65em; margin-left:1.5em;">ulož aktuálny stav s popisom</p>
+        </div>
+        <aside class="notes">
+          Minimálne 3 príkazy ktoré potrebujete. git init = zapni Git.
+          git add = vyber čo chceš uložiť. git commit = ulož s popisom.
+          Analógia: init = kúpiť fotoaparát, add = zamieriť, commit = odfotiť.
+        </aside>
+      </section>
+
+      <!-- Slide 47 - GitHub -->
+      <section class="two-column">
+        <h2>GitHub</h2>
+        <div class="columns">
+          <div class="col">
+            <p><strong>Váš kód v cloude.</strong></p>
+            <ul>
+              <li><strong>Záloha</strong> — kód v cloude, nikdy nestratíte prácu</li>
+              <li><strong>Nasadenie</strong> — web online cez GitHub Pages / Vercel</li>
+              <li><strong>Portfolio</strong> — projekty viditeľné pre klientov</li>
+            </ul>
+          </div>
+          <div class="col">
+            <img src="assets/images/github-profile.png" alt="GitHub profil" style="border-radius:12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
+          </div>
+        </div>
+        <aside class="notes">
+          Účet na GitHube by mali mať vopred. Ak nemajú, pomôcť vytvoriť.
+          Zdôrazniť praktické benefity: záloha, nasadenie webu, portfolio.
+        </aside>
+      </section>
+
+      <!-- Slide 48 - Cvičenie: Git + GitHub -->
+      <section class="checklist">
+        <h2>Cvičenie: Git + GitHub</h2>
+        <ul class="checklist-items">
+          <li><code>git init</code> vo vašom projekte</li>
+          <li><code>git add .</code> + <code>git commit -m "first commit"</code></li>
+          <li>Vytvorte repo na GitHub.com</li>
+          <li><code>git push</code> - pošlite kód do cloudu</li>
+        </ul>
+        <p style="font-size:0.75em; margin-top:1em;">
+          <strong>Tip:</strong> CC vie pomôcť s git príkazmi!
+        </p>
+        <aside class="notes">
+          CC môže pomôcť s git príkazmi ak si účastníci nepamätajú syntax.
+          Typické problémy: SSH kľúče, autentifikácia na GitHub.
+          Mať pripravený návod pre HTTPS aj SSH.
+        </aside>
+      </section>
+
+      <!-- Slide 49 - Python venv -->
+      <section class="two-column">
+        <h2>Python virtuálne prostredie</h2>
+        <div class="columns">
+          <div class="col">
+            <p style="font-size:0.8em;">Izolácia knižníc pre každý projekt.</p>
+            <div>
+              <p class="terminal-prompt" style="color: var(--birne-black);">python -m venv venv</p>
+              <p class="text-muted" style="font-size:0.65em; margin-left:1.5em;">vytvor virtuálne prostredie</p>
+            </div>
+            <div>
+              <p class="terminal-prompt" style="color: var(--birne-black);">source venv/bin/activate</p>
+              <p class="text-muted" style="font-size:0.65em; margin-left:1.5em;">aktivuj ho</p>
+            </div>
+            <div>
+              <p class="terminal-prompt" style="color: var(--birne-black);">pip install pandas matplotlib</p>
+              <p class="text-muted" style="font-size:0.65em; margin-left:1.5em;">nainštaluj knižnice</p>
+            </div>
+          </div>
+          <div class="col">
+            <img src="assets/images/python-virtual-envs.webp" alt="Python virtuálne prostredia">
+          </div>
+        </div>
+        <aside class="notes">
+          Virtuálne prostredie = sandbox pre Python knižnice.
+          Prečo: aby sa knižnice z rôznych projektov neprali.
+          Windows: venv\Scripts\activate (nie source).
+        </aside>
+      </section>
+
+      <!-- Slide 50 - Supabase -->
+      <section class="two-column">
+        <h2>Supabase</h2>
+        <div class="columns">
+          <div class="col">
+            <p><strong>Databáza v cloude</strong> - backend bez programovania.</p>
+            <ul>
+              <li>PostgreSQL databáza</li>
+              <li>Autentifikácia</li>
+              <li>API automaticky</li>
+              <li>Zadarmo na začiatok</li>
+            </ul>
+          </div>
+          <div class="col">
+            <img src="assets/images/supabase-dashboard.png" alt="Supabase Schema Visualizer" style="border-radius:12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
+          </div>
+        </div>
+        <aside class="notes">
+          Supabase = Firebase alternatíva s PostgreSQL. Open source, zadarmo tier.
+          Pre marketérov: miesto kam ukladať dáta z kampaní, formulárov, atď.
+        </aside>
+      </section>
+
+      <!-- Slide 51 - Supabase setup -->
+      <section class="code-example">
+        <h2>Supabase + Claude Code</h2>
+        <pre><code class="language-plaintext" data-trim data-noescape>
+# Pridanie Supabase MCP
+claude mcp add supabase -- \
+  npx -y @anthropic-ai/mcp-supabase
+
+# Potom v CC:
+> Vytvor tabuľku pre email subscribérov
+  s poľami: email, meno, datum_prihlasenia
+
+CC vytvára tabuľku v Supabase...
+Tabuľka 'subscribers' vytvorená.
+        </code></pre>
+        <aside class="notes">
+          Krok po kroku cez Supabase MCP. CC vie vytvárať tabuľky,
+          vkladať dáta, robiť queries - všetko cez prirodzený jazyk.
+        </aside>
+      </section>
+
+      <!-- Slide 52 - Render -->
+      <section class="two-column">
+        <h2>Render</h2>
+        <div class="columns">
+          <div class="col">
+            <p><strong>Hosting pre aplikácie</strong> - váš projekt online.</p>
+            <ul>
+              <li>Prepojenie s GitHubom</li>
+              <li>Automatický deploy pri zmene</li>
+              <li>Zadarmo tier pre začiatok</li>
+              <li>HTTPS automaticky</li>
+            </ul>
+          </div>
+          <div class="col">
+            <img src="assets/images/render-homepage.png" alt="Render.com" style="border-radius:12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
+          </div>
+        </div>
+        <aside class="notes">
+          Render = moderný hosting. Zadarmo tier pre statické stránky a malé služby.
+          Prepojíte s GitHub repom a pri každom pushe sa automaticky nasadí.
+        </aside>
+      </section>
+
+      <!-- Slide 53 - Cvičenie: Deploy -->
+      <section class="checklist">
+        <h2>Cvičenie: Deploy</h2>
+        <ul class="checklist-items">
+          <li>Prepojte projekt so Supabase</li>
+          <li>Vytvorte Render účet (render.com)</li>
+          <li>Prepojte s GitHub repom</li>
+          <li>Nasaďte aplikáciu</li>
+          <li>Otvorte v prehliadači - váš projekt je online!</li>
+        </ul>
+        <aside class="notes">
+          Wow moment - ich projekt beží na internete. URL ktorú môžu zdieľať.
+          Ak nestíhajú, stačí Render deploy bez Supabase - aj statická stránka sa počíta.
+        </aside>
+      </section>
+
+      <!-- Slide 54 - Celkový workflow -->
+      <section class="content">
+        <h2>Celkový workflow</h2>
+        <p style="font-size:0.9em; text-align:center; margin: 1em 0;">
+          <span class="badge badge-purple">Lokálny vývoj</span>
+          →
+          <span class="badge badge-lemon">Git</span>
+          →
+          <span class="badge badge-grapefruit">GitHub</span>
+          →
+          <span class="badge badge-purple">Render</span>
+        </p>
+        <ul>
+          <li>CC pomáha v <strong>každom kroku</strong></li>
+          <li>Od nápadu po bežiacu aplikáciu</li>
+          <li>Bez toho aby ste boli programátor</li>
+        </ul>
+        <aside class="notes">
+          Zopakovať celý pipeline. Toto je workflow ktorý používajú aj profíci.
+          CC robí ťažkú prácu - vy robíte rozhodnutia.
+        </aside>
+      </section>
+
+      <!-- Slide 55 - Zhrnutie bloku 4 -->
+      <section class="content">
+        <h2>Zhrnutie: Blok 4</h2>
+        <ul>
+          <li><strong>Git</strong> - verziovanie a história zmien</li>
+          <li><strong>GitHub</strong> - záloha a spolupráca v cloude</li>
+          <li><strong>Supabase</strong> - databáza bez programovania</li>
+          <li><strong>Render</strong> - nasadenie na internet</li>
+        </ul>
+        <aside class="notes">
+          Prechod na záver. Posledné 4 slidy. Pochváliť účastníkov
+          že zvládli celý workshop.
+        </aside>
+      </section>
+
+      <!-- ================================================
+           ZÁVER (Slides 56-58)
+           ================================================ -->
+
+      <!-- Slide 56 - Čo sme sa naučili -->
+      <section class="content">
+        <h2>Čo sme sa naučili</h2>
+        <div class="block-cards">
+          <div class="block-card">
+            <div class="block-card-number">01</div>
+            <div class="block-card-title">Terminál a inštalácia</div>
+            <div class="block-card-time">Základy terminálu, Claude Code setup</div>
+          </div>
+          <div class="block-card">
+            <div class="block-card-number">02</div>
+            <div class="block-card-title">Súbory, kontext a príkazy</div>
+            <div class="block-card-time">CLAUDE.md, memory, slash commands</div>
+          </div>
+          <div class="block-card">
+            <div class="block-card-number">03</div>
+            <div class="block-card-title">MCP a prepojenia</div>
+            <div class="block-card-time">Web search, MCP ekosystém, Connectors</div>
+          </div>
+          <div class="block-card">
+            <div class="block-card-number">04</div>
+            <div class="block-card-title">Git, nasadenie a prostredie</div>
+            <div class="block-card-time">Git, GitHub, Supabase, Render</div>
+          </div>
+        </div>
+        <p style="margin-top:0.8em; font-size:0.85em;">Od terminálu po bežiacu aplikáciu za 4 hodiny.</p>
+        <aside class="notes">
+          Rýchle zopakovanie. Pripomenúť čo všetko zvládli za 4 hodiny.
+          Od nuly v termináli po fungujúci projekt online.
+        </aside>
+      </section>
+
+      <!-- Slide 57 - Ďalšie kroky -->
+      <section class="content">
+        <h2>Ďalšie kroky</h2>
+        <ul>
+          <li><strong>Dokumentácia</strong> - docs.anthropic.com/claude-code</li>
+          <li><strong>Prax</strong> - najlepšie sa učí používaním</li>
+          <li><strong>Komunita</strong> - zdieľajte čo vytvoríte</li>
+          <li><strong>Birne</strong> - sme tu pre vás</li>
+        </ul>
+        <aside class="notes">
+          Motivácia pokračovať. Dať konkrétne linky a zdroje.
+          Pripomenúť že Birne ponúka ďalšie workshopy a podporu.
+        </aside>
+      </section>
+
+      <!-- Slide 58 - Ďakujeme -->
+      <section class="section-title">
+        <hr class="accent-line">
+        <h1>Ďakujeme</h1>
+        <p class="subtitle">birne.sk</p>
+        <aside class="notes">
+          Ďakujem za účasť. Priestor na otázky a feedback.
+          Zdieľať kontaktné údaje, sociálne siete.
+        </aside>
+      </section>
+
+    </div><!-- .slides -->
+
+    <!-- Global logo – visible on every slide -->
+    <img src="https://birne.sk/logo.svg" alt="Birne" class="slide-logo">
+  </div><!-- .reveal -->
+
+  <!-- Reveal.js -->
+  <script src="node_modules/reveal.js/dist/reveal.js"></script>
+  <script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+
+  <script>
+    Reveal.initialize({
+      // Presentation settings
+      hash: true,
+      slideNumber: true,
+      width: 1280,
+      height: 720,
+      margin: 0.04,
+
+      // Transition
+      transition: 'fade',
+      transitionSpeed: 'default',
+
+      // Navigation
+      controls: true,
+      progress: true,
+      center: false,
+
+      // Plugins
+      plugins: [RevealHighlight]
+    });
+
+    // Toggle logo inversion on dark slides
+    var darkTypes = ['section-title', 'code-example', 'quote', 'transition'];
+    var logo = document.querySelector('.slide-logo');
+
+    function updateLogo() {
+      var slide = Reveal.getCurrentSlide();
+      var isDark = darkTypes.some(function(cls) { return slide.classList.contains(cls); });
+      logo.classList.toggle('on-dark', isDark);
+    }
+
+    Reveal.on('slidechanged', updateLogo);
+    Reveal.on('ready', updateLogo);
+  </script>
+</body>
+</html>

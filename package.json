@@ -1,0 +1,15 @@
+{
+  "name": "birne-cc-workshop",
+  "version": "1.0.0",
+  "description": "Claude Code pre marketérov - Workshop prezentácia (Birne Akadémia)",
+  "scripts": {
+    "start": "npx serve .",
+    "test": "echo \"No tests\" && exit 0"
+  },
+  "author": "Birne",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^24.37.5",
+    "reveal.js": "^5.2.1"
+  }
+}
